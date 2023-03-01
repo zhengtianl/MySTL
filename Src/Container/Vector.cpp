@@ -63,7 +63,7 @@ namespace MySTL {
             }
             else if (m_nSize + 1 > m_nTotalSize)
             {
-                m_nTotalSize *= 2; //将数组的size倍增
+                m_nTotalSize *= 1.5; //将数组的size倍增：：这里使用1.5倍增防止爆栈
                 value_type *temp = new value_type[m_nTotalSize]; //构造两倍大小的数组将值传进去
                 for(int i=0; i< m_nSize; i++) //将temp容器填满
                 {
