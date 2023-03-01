@@ -14,7 +14,7 @@
 - [x] member function: push_back
 <br/> the improvement of the push_back: </br>
 Cumulative increase time complexity O(n) 
-<br/>![image](Image/Cumulative increase.png)</br>
+<br/>![image](Image/Cumulative_increase.png)</br>
 <br/> Multiply increase time complexity O(1)</br>
 <br/> ![image](Image/multiply.png) </br>
 <br/> **my imporvemnet:** <br/>
