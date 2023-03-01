@@ -7,6 +7,16 @@
 
 #### Container
 #### Vector
-1. [ ] operator
-
-2. [ ] Member function
+3/1/2023
+- [x] construct function of the vector
+- [x] deconstruct function of the vector
+- [x] copy construct function of the vector
+- [x] member function: push_back
+</br> the improvement of the push_back:
+Cumulative increase time complexity O(n) 
+</br>![image](Image/Cumulative increase.png)
+</br>Multiply increase time complexity O(1)
+</br>![image](Image/multiply.png)
+</br>my imporvemnet:
+</br>the origin way to expansion is toExpanding the capacity by 2 times will cause the memory requested next time to be greater than the sum of the previously allocated memory, causing the previously allocated memory to no longer be used, so it is best to set the doubling growth factor between (1,2).
+</br> I setting the 1.5 times of vector in my poject.
