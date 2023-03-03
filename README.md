@@ -7,6 +7,7 @@
 
 #### Container
 #### Vector
+</br>![image](Image\vector.png)<br/>
 * 3/1/2023
 - [x] construct function of the vector
 - [x] deconstruct function of the vector
@@ -47,3 +48,16 @@ further work:
 2. finish the basic algorithm including <sort, compare etc> 
 3. create document and measure structure
 ***
+
+
+
+#### String
+</br>![image](Image\string.png)<br/>
+3/3/2023
+- [x] construct
+- [x] destruct
+- [x] copy constrcut
+- [x] size()
+- [x] length()
+- [x] max_size()
+
