@@ -4,10 +4,6 @@
 
 #ifndef MYSTL_VECTOR_H
 #define MYSTL_VECTOR_H
-
-//
-// Created by StarkLu on 2023/2/28.
-//
 #include <iostream>
 #include <algorithm>
 #include <numeric>
@@ -21,9 +17,9 @@ namespace MySTL
         typedef T value_type; //设置数据类型
         typedef T* iterator;    //设置迭代器
 
-        //构造函数，初始化值
+        //constructor
         Vector(): m_data(nullptr), m_nSize(0), m_nTotalSize(0){};
-        //析构函数，释放指针
+        //destructor
         ~Vector()
         {
             delete[]m_data; //释放指针
@@ -31,7 +27,7 @@ namespace MySTL
             m_nSize =0;
             m_nTotalSize = 0;
         }
-        //拷贝构造函数
+        //copy constructor
         Vector(const Vector& vec)
         {
             m_nSize = vec.m_nSize;
@@ -42,37 +38,27 @@ namespace MySTL
                 m_data[i] = vec.m_data[i];
             }
         }
-        //完成push_back
-        void push_back(value_type value)
+        
+        //operator=
+        Vector& operator=(const Vector& vec)
         {
-            if(0 == m_nTotalSize)
+            if (this == &vec)
             {
-                m_nTotalSize = 1;
-                m_data = new value_type[1];
+                return *this;
             }
-            else if (m_nSize + 1 > m_nTotalSize)
+            value_type* temp = new value_type[vec.m_nTotalSize];
+            for(int i = 0; i < vec.m_nSize; i++)
             {
-                m_nTotalSize *= 2; //将数组的size倍增：：这里使用1.5倍增防止爆栈
-                value_type *temp = new value_type[m_nTotalSize]; //构造两倍大小的数组将值传进去
-                for(int i=0; i< m_nSize; i++) //将temp容器填满
-                {
-                    temp[i] = m_data[i];
-                }
-                delete[] m_data; //删除原来的指针防止内存泄露
-                m_data = temp; //m_data所在地址指向tmp所在地址
+                temp[i] = vec.m_data[i];
             }
-            m_data[m_nSize] = value; //将最后一位赋值为value
-            m_nSize ++; //加到容器课查询的size
+            delete[] m_data;
+            m_data = temp;
+            m_nSize = vec.m_nTotalSize;
+            m_nTotalSize = vec.m_nTotalSize;
+            return this;
         }
 
-        void pop_back()
-        {
-            if(0 == m_nSize)
-            {
-                throw "you can not pop an empty Vector";
-            }
-            --m_nSize;
-        }
+        //Capacity:
         ::size_t size()
         {
             return m_nSize;
@@ -83,9 +69,17 @@ namespace MySTL
         }
         bool empty()
         {
-            return m_nSize ==0;
+            return m_nSize == 0;
         }
 
+        
+        //Element access:
+        
+        value_type& operator[](::size_t index)
+        {
+            return m_data[index];
+        }
+        
         value_type front()
         {
             return m_data[0];
@@ -95,6 +89,8 @@ namespace MySTL
             return m_data[m_nSize - 1];
         }
 
+        
+        //Modifiers
         void insert(iterator it, value_type value)
         {
             int index = it - m_data;
@@ -146,6 +142,38 @@ namespace MySTL
             --m_nSize;
         }
 
+        void push_back(value_type value)
+        {
+            if(0 == m_nTotalSize)
+            {
+                m_nTotalSize = 1;
+                m_data = new value_type[1];
+            }
+            else if (m_nSize + 1 > m_nTotalSize)
+            {
+                m_nTotalSize *= 2; //将数组的size倍增：：这里使用1.5倍增防止爆栈
+                value_type *temp = new value_type[m_nTotalSize]; //构造两倍大小的数组将值传进去
+                for(int i=0; i< m_nSize; i++) //将temp容器填满
+                {
+                    temp[i] = m_data[i];
+                }
+                delete[] m_data; //删除原来的指针防止内存泄露
+                m_data = temp; //m_data所在地址指向tmp所在地址
+            }
+            m_data[m_nSize] = value; //将最后一位赋值为value
+            m_nSize ++; //加到容器课查询的size
+        }
+
+        void pop_back()
+        {
+            if(0 == m_nSize)
+            {
+                throw "you can not pop an empty Vector";
+            }
+            --m_nSize;
+        }
+        
+        //Iterators:
         iterator begin()
         {
             return m_data;
@@ -155,34 +183,7 @@ namespace MySTL
         {
             return m_data + m_nSize;
         }
-
-
-
-
-        //运算符
-        Vector& operator=(const Vector& vec)
-        {
-            if (this == &vec)
-            {
-                return *this;
-            }
-            value_type* temp = new value_type[vec.m_nTotalSize];
-            for(int i = 0; i < vec.m_nSize; i++)
-            {
-                temp[i] = vec.m_data[i];
-            }
-            delete[] m_data;
-            m_data = temp;
-            m_nSize = vec.m_nTotalSize;
-            m_nTotalSize = vec.m_nTotalSize;
-            return this;
-        }
-
-        value_type& operator[](::size_t index)
-        {
-            return m_data[index];
-        }
-
+        // compare
         bool operator == (const Vector& vec)
         {
             if(m_nSize != vec.size())
