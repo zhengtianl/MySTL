@@ -1,9 +1,6 @@
 //
 // Created by StarkLu on 2023/2/28.
 //
-
-#ifndef MYSTL_VECTOR_H
-#define MYSTL_VECTOR_H
 #include <iostream>
 #include <algorithm>
 #include <numeric>
@@ -210,4 +207,4 @@ namespace MySTL
 
 
 
-#endif //MYSTL_VECTOR_H
+

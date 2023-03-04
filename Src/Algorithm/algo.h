@@ -9,6 +9,14 @@ namespace MySTL
     template<typename T>
     class alo
     {
+        alo(){
+
+        }
+        ~alo(){
+        }
+        alo(const alo& s1){
+
+        }
 
     };
 }

@@ -88,3 +88,6 @@ int main() {
 
 ///在这个例子中，MyClass 类有一个静态成员变量 count，它在程序启动时被初始化为0。该类还有一个静态成员函数 printCount()，该函数可以通过类名调用，而不需要创建类的实例。在 main() 函数中，我们通过 MyClass::count 访问静态成员变量，并通过 MyClass::printCount() 调用静态成员函数。由于静态成员与类的实例无关，因此我们无需创建任何 MyClass 的对象即可访问和操作静态成员。
 ```
+- [x] test empty the result and capacity as below it works:
+<br/>![image](Image/string_empty.png)</br>
+<br/>![image](Image/stirng_empty_result.png)</br>

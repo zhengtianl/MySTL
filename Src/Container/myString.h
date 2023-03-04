@@ -1,25 +1,26 @@
 //
-// Created by StarkLu on 2023/2/28.
+// Created by StarkLu on 2023/3/4.
 //
 
-#ifndef MYSTL_VECTOR_H
-#define MYSTL_VECTOR_H
+#ifndef MYSTL_MYSTRING_H
+#define MYSTL_MYSTRING_H
+
 #include <iostream>
 #include <algorithm>
 #include <numeric>
 using namespace std;
 namespace MySTL
-{
-    template <typename charType>
-    class myString
-    {
-    private:
-        charType* m_data; //设置指针指向数值 包含指针成员的类都需要拷贝构造函数
-        size_t  m_nSize; //设置大小
-        size_t  m_nTotalSize;//设置容器容量
+        {
+        template <typename charType>
+        class myString
+        {
+            private:
+            charType* m_data; //设置指针指向数值 包含指针成员的类都需要拷贝构造函数
+            size_t  m_nSize; //设置大小
+            size_t  m_nTotalSize;//设置容器容量
 
 
-    public:
+            public:
             typedef charType char_type; //设置数据类型
             typedef charType* iterator; //设置迭代器
             //construct
@@ -44,7 +45,7 @@ namespace MySTL
                 }
 
             }
-            //Iterators:    
+            //Iterators:
             iterator begin()
             {
                 return m_data;
@@ -130,10 +131,7 @@ namespace MySTL
             //Member constants
 
             //Non-member function overloads
+        };
+        }
 
-
-
-    };
-
-}
-#endif
+#endif //MYSTL_MYSTRING_H
