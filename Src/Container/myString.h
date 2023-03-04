@@ -10,18 +10,18 @@
 using namespace std;
 namespace MySTL
 {
-    template <typename Chartype>
+    template <typename charType>
     class myString
     {
     private:
-        Chartype* m_data; //设置指针指向数值 包含指针成员的类都需要拷贝构造函数
+        charType* m_data; //设置指针指向数值 包含指针成员的类都需要拷贝构造函数
         size_t  m_nSize; //设置大小
         size_t  m_nTotalSize;//设置容器容量
 
 
     public:
-            typedef Chartype char_type; //设置数据类型
-            typedef Chartype* iterator; //设置迭代器
+            typedef charType char_type; //设置数据类型
+            typedef charType* iterator; //设置迭代器
             //construct
             myString(): m_data(nullptr), m_nSize(0), m_nTotalSize(0){};
             //destructor
