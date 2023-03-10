@@ -91,7 +91,8 @@ int main() {
 - [x] test empty the result and capacity as below it works:
 <br/>![image](Image/string_empty.png)</br>
 <br/>![image](Image/stirng_empty_result.png)</br>
-
+3/5/2023
+- [x] operator "[]"
 3/10/2023
 - [x] operator "=="
 - [x] operator "+"
@@ -102,3 +103,4 @@ int main() {
 - [x] test "=" "+" "+=" "size"
   <br/>![image](Image/size_+.png)</br>
   <br/>![image](Image/result_string.png)</br>
+

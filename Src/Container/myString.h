@@ -121,7 +121,10 @@ namespace MySTL
                 return true;
             }
 
-
+            value_type& operator[](::size_t index)
+            {
+                return m_data[index];
+            }
             // Capacity:
 
             ::size_t size() {
