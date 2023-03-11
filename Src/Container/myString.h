@@ -8,7 +8,6 @@
 #include <iostream>
 #include <algorithm>
 #include <numeric>
-using namespace std;
 namespace MySTL
         {
         template <typename charType>
@@ -121,10 +120,6 @@ namespace MySTL
                 return true;
             }
 
-            char& operator[](::size_t index)
-            {
-                return m_data[index];
-            }
             // Capacity:
 
             ::size_t size() {

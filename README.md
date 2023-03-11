@@ -88,19 +88,27 @@ int main() {
 
 ///在这个例子中，MyClass 类有一个静态成员变量 count，它在程序启动时被初始化为0。该类还有一个静态成员函数 printCount()，该函数可以通过类名调用，而不需要创建类的实例。在 main() 函数中，我们通过 MyClass::count 访问静态成员变量，并通过 MyClass::printCount() 调用静态成员函数。由于静态成员与类的实例无关，因此我们无需创建任何 MyClass 的对象即可访问和操作静态成员。
 ```
-- [x] test empty the result and capacity as below it works:
+1. [x] test empty the result and capacity as below it works:
 <br/>![image](Image/string_empty.png)</br>
 <br/>![image](Image/stirng_empty_result.png)</br>
 3/5/2023
-- [x] operator "[]"
+2. [x] operator "[]"
 3/10/2023
-- [x] operator "=="
-- [x] operator "+"
-- [x] operator "+="
-- [x] Element access:reserve
-- [x] String operations:c_str()
-- [x] restruct the Construct function, destruct, copy construct
-- [x] test "=" "+" "+=" "size"
+3. [x] operator "=="
+4. [x] operator "+"
+5. [x] operator "+="
+6. [x] Element access:reserve
+7. [x] String operations:c_str()
+8. [x] restruct the Construct function, destruct, copy construct
+9. [x] test "=" "+" "+=" "size"
   <br/>![image](Image/size_+.png)</br>
   <br/>![image](Image/result_string.png)</br>
+3/11/2023
+10. [x] restruct the nonsense part of previous part
+* avoid namespace pollution
+* add the initiation on the previous work
+11. [x] [init the iterator of the unordered_map](Src/Container/unorderedMap.cpp)
+12. [x] [create the struct of the unordered_map](Src/Container/unorderedMap.cpp)
+</br>The main idea to create the container:
+13. [x] This constructor allocates bucket_count buckets to the data when creating unordered_map, and stores them in a std::vector<std::list<value_type>> container. std::list<value_type> is one, linked list hash collision. Because each plate is a linked list, the more the number of plates, the fewer elements in the hash table, which means querying, inserting fast hooks and deleting elements.
 
