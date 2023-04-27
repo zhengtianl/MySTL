@@ -112,3 +112,14 @@ int main() {
 </br>The main idea to create the container:
 13. [x] This constructor allocates bucket_count buckets to the data when creating unordered_map, and stores them in a std::vector<std::list<value_type>> container. std::list<value_type> is one, linked list hash collision. Because each plate is a linked list, the more the number of plates, the fewer elements in the hash table, which means querying, inserting fast hooks and deleting elements.
 
+4/27/2023
+14. [x] struct the linkList
+15. [x] [pdouble-linkList function](Src/Container/linkedList.cpp)
+16. [x] finished the member function ADD
+17. [x] finished the member function delete
+18. [x] finished the member function search 
+19. [x] finished the member function insert
+20. [x] test function
+<br/>![image](Image/test-function.png)</br>
+<br/>![image](Image/linkList-test.png)</br>
+
